@@ -152,15 +152,12 @@ class CommandsController extends Controller
     }
     
 
-    public function showOneCommand($id){
+    public function showOneCommand($number){
 
-        $id = 
-        
-        $command = Command::all()->where('id', $id);
-        
-        dd($command);
-        
-        return view('pages.command', compact('command'));
+        $numCommand = Command::whereNumber($number)->first();
+        return view('pages.command', compact('numCommand'));
     }
+
+    
     
 }

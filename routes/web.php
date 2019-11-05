@@ -11,17 +11,21 @@
 |
 */
 
-Route::get('/', 'CommandsController@statsCommands' )->name('accueil');
+Route::get('/', 'CommandsController@statsCommands' )->name('accueil')->middleware('auth');
 
-Route::get('/liste_des_commandes', 'CommandsController@showCommands');
+Route::get('/liste_des_commandes', 'CommandsController@showCommands')->middleware('auth');
 
-Route::get('/stock', 'TissusesController@showTissuses')->name('stock'); 
+Route::get('/stock', 'TissusesController@showTissuses')->name('stock')->middleware('auth'); 
 
 
-Route::post('/liste_des_commandes', 'CommandsController@addCommand' )->name('liste_des_commandes');
+Route::post('/liste_des_commandes', 'CommandsController@addCommand' )->name('liste_des_commandes')->middleware('auth');
 
-Route::post('/', 'ProductsController@addProduct' )->name('accueil');
+Route::post('/', 'ProductsController@addProduct' )->name('accueil')->middleware('auth');
 
-Route::post('/stock', 'TissusesController@addTissuses')->name('stock');
+Route::post('/stock', 'TissusesController@addTissuses')->name('stock')->middleware('auth');
 
-Route::get('/liste_des_commandes/command', 'CommandsController@showOneCommand')->name('oneCommand');
+Route::get('/liste_des_commandes/{command}', 'CommandsController@showOneCommand')->name('oneCommand')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -20,13 +20,14 @@
     </thead>
     <tbody>    
         @foreach ($commands as $command)
-        <tr onclick="visibilite({{$command->number}}); return false;" class="{{ $command->statut == 1 ? 'full' : 'empty' }}">
-            <td>{{$command->number}}</td>
+        <tr  class="{{ $command->statut == 1 ? 'full' : 'empty' }}">
+            <td class="nbCmd" onclick="visibilite({{$command->number}}); return false;">{{$command->number}}</td>
             <td>{{$command->name}}</td>
             <td>{{$command->adresse}}</td>
             <td>{{$command->origin}}</td>
             <td>{{$command->total}} €</td>
-            <td>{{$command->temps_prod}} min</td>     
+            <td>{{$command->temps_prod}} min</td>
+        <td><a href="{{Route("oneCommand", ['number' => $command->number])}}">click</a></td>     
         </tr>
       <tbody id="{{$command->number}}" style="display:none;">
             <tr {{$command->product_1 == "" ? "hidden" : ""}}>
@@ -34,7 +35,7 @@
                 <td></td>
                 <td></td>
                 <td><img class="imageTissu" src="images/Tissus/{{$command->tissu_1}}" alt='' ></td>
-                <td>{{$command->product_1}}</td>
+                <td style="font-size:12px;">{{$command->product_1}}</td>
                 <td>{{$command->quantity_1}}</td>
               </tr>
               <tr {{$command->product_2 == "" ? "hidden" : ""}}>
