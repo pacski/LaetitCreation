@@ -13,9 +13,9 @@
 @endif
 <p>page commande numero {{$numCommand->statut}}</p>
 
-{{ App\Form::open(array('url' => 'foo/bar')) }}
+{{-- {{ App\Form::open(array('url' => 'foo/bar')) }}
     echo Form::select('size', array('L' => 'Large', 'S' => 'Small'));
-{{ App\Form::close() }}
+{{ App\Form::close() }} --}}
 
     
 @endsection

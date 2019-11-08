@@ -1,4 +1,4 @@
-<form class="needs-validation" action="{{action('ProductsController@addProduct')}}" method="post" enctype="multipart/form-data" novalidate >
+<form class="needs-validation px-2 pb-2" action="{{action('ProductsController@addProduct')}}" method="post" enctype="multipart/form-data" novalidate >
     @csrf
 
         <div class="form-row">
@@ -64,7 +64,7 @@
           </div>
         </div>
         
-        <button class="btn btn-primary " type="submit">Ajouter Produit</button>
+        <button class="btn btn-primary  mx-auto" style="width:100%" type="submit">Ajouter Produit</button>
       </form>
       
       <script>

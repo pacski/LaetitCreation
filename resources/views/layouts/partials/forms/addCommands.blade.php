@@ -1,4 +1,4 @@
-<form class="needs-validation" action="/liste_des_commandes" method="post" novalidate>
+<form class="needs-validation px-2 pb-2" action="/liste_des_commandes" method="post" novalidate>
     @csrf
 
         <div class="form-row">
@@ -149,7 +149,7 @@
           </div>
         </div>
         
-        <button class="btn btn-primary " type="submit">Ajouter commande</button>
+        <button class="btn btn-primary mx-auto" style="width:100%" type="submit">Ajouter commande</button>
       </form>
       
       <script>

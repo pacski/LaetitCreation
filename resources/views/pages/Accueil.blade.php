@@ -10,10 +10,6 @@
 <hr>
 @include('layouts/partials/effects/productCarrousel')
 <hr>
-<div class="formProduct">
-@include('layouts/partials/forms/addProducts')
-@include('layouts/partials/forms/addCommands')
-@include('layouts/partials/forms/addTissus')
+@include('layouts/partials/effects/formCarroussel')
 
-</div>
 @endsection
