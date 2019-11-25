@@ -26,7 +26,7 @@
 <body>
     @include('layouts/partials/nav')
     @yield('content')
-    @include('layouts/partials/footer')
+    {{-- @include('layouts/partials/footer') --}}
 
     
 </body>

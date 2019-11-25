@@ -9,9 +9,7 @@ margin: auto;
 text-align:center;
 }
 
-.full{
- background: green;
-}
+
 .nearEmpty{
     background: orange
 }
@@ -31,4 +29,19 @@ tr:hover{
     width: 50%;
     margin: auto;
     text-align:center;
+}
+
+.btn{
+    background-color: #efc6cc;
+    border: #efc6cc;
+    color: black;
+}
+
+.btn:hover{
+    background-color: #b86f7a;
+}
+
+thead tr th{
+    color: #b86f7a;
+    font: bold
 }

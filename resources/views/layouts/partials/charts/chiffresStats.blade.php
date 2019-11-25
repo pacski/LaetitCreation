@@ -1,40 +1,46 @@
-<div class="accueil_stats d-flex flex-wrap">
-        <div class="card text-center md-4" style="width: 18rem;">
+<br>
+<div class="accueil_stats d-flex align-content-end flex-wrap">
+        <div class="card text-center md-4 " style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Chiffre d'affaire globale</h5>
-            <p class="card-text">{{$commands->sum('total')}} €</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text font-weight-bold">{{$commands->sum('total')}} €</p>
+              <h5 class="card-title font-weight-lighter">Chiffre d'affaire globale</h5>
             </div>
-    
           </div>
           <div class="card text-center md-4" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Nombre total de commandes</h5>
-            <p class="card-text">{{$commands->count()}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text font-weight-bold">{{$commands->count()}}</p>
+              <h5 class="card-title font-weight-lighter">Nombre total de commandes</h5>
             </div>
-    
           </div>
+</div>
+<br>
+<div class="accueil_stats d-flex align-content-end flex-wrap">
           <div class="card text-center md-4" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Chiffre d'affaire total du mois</h5>
-            <p class="card-text">{{$commandsMonth->sum('total')}} €</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+              <p class="card-text font-weight-bold">{{$commandsMonth->sum('total')}} €</p>
+              <h5 class="card-title font-weight-lighter">Chiffre d'affaire total du mois</h5>
+            </div>  
           </div>
           <div class="card text-center" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Nombre total de commandes ce mois</h5>
-            <p class="card-text">{{$commandsMonth->count()}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <p class="card-text font-weight-bold">{{$commandsMonth->count()}}</p>
+              <h5 class="card-title font-weight-lighter">Nombre total de commandes ce mois</h5>
+            </div>
           </div>
-          </div>
+</div>
+<br>
+<div class="accueil_stats d-flex align-content-end flex-wrap">
             <div class="card text-center" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title">Nombre de commandes en cours</h5>
-              <p class="card-text">{{$commandsInProgress->count()}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <p class="card-text font-weight-bold">{{$commandsInProgress->count()}}</p>  
+                <h5 class="card-title font-weight-lighter">Nombre de commandes en cours</h5>    
               </div>
           </div>
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-text font-weight-bold">{{$tempsProdTotal}} h</p>
+              <h5 class="card-title font-weight-lighter">Temps de travail nécéssaire</h5>
+            </div>
+        </div>
           
-    </div>
+</div>

@@ -1,13 +1,11 @@
 @extends('layouts/application')
 
 @section('content')
-<h1>Liste des commandes</h1>
-<div class="addFormCommands">
-    @include('layouts/partials/forms/addCommands')
-</div>
-
-<hr>
-<table class="table table-bordered">
+<br>
+<h1 class="text-center mb-3 col-md-3 rounded mx-auto" style="font-size:1.5em;">Liste des commandes</h1>
+<br>
+<div class="table-responsive-xl">
+<table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Numero de commande</th>
@@ -16,18 +14,19 @@
         <th scope="col">origine</th>
         <th scope="col">valeur</th>
         <th scope="col">Temps de production</th>
+        <th scope="col">Statut</th>
       </tr>
     </thead>
     <tbody>    
         @foreach ($commands as $command)
-        <tr  class="{{ $command->statut == 1 ? 'full' : 'empty' }}">
+        <tr>
             <td class="nbCmd" onclick="visibilite({{$command->number}}); return false;">{{$command->number}}</td>
-            <td>{{$command->name}}</td>
+            <td><a href="{{Route("oneCommand", ['number' => $command->number])}}">{{$command->name}}</a></td>     
             <td>{{$command->adresse}}</td>
             <td>{{$command->origin}}</td>
             <td>{{$command->total}} €</td>
             <td>{{$command->temps_prod}} min</td>
-        <td><a href="{{Route("oneCommand", ['number' => $command->number])}}">click</a></td>     
+            <td>{{ $command->statut == 1 ? '❌' : '✅' }}</td>
         </tr>
       <tbody id="{{$command->number}}" style="display:none;">
             <tr {{$command->product_1 == "" ? "hidden" : ""}}>
@@ -58,26 +57,14 @@
         
         @endforeach
     </tbody>
-    <tfoot>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>temps de production total</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>{{$tempsProdTotal}} Min</td>
-      </tr>
-    </tfoot>
+  
   </table>
+</div>
   <hr>
+ 
+  <div class="addFormCommands">
+    @include('layouts/partials/forms/addCommands')
+  </div>
   
 
 

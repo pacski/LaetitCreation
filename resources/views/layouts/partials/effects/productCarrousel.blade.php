@@ -1,5 +1,5 @@
 <div class="container-fluid">
-        <h1 class="text-center mb-3">Produits</h1>
+        <h1 class="text-center mb-3 col-md-3 rounded mx-auto" >Produits</h1>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner row w-100 mx-auto">

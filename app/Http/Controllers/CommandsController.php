@@ -37,14 +37,17 @@ class CommandsController extends Controller
     public function statsCommands(){
 
         include('stats/CommandsStats.php');
-        
+
+        $tempsProdMinutes = DB::table('commands')->select('temps_prod')->sum('temps_prod');
+        $tempsProdTotal = round($tempsProdMinutes / 60);
         return view('pages.Accueil', compact([
             'products',
             'commands',
             'tissuses',
             'commandsMonth',
             'commandsInProgress',
-            'commandsJan', 'commandsFeb','commandsMar', 'commandsMar', 'commandsApr', 'commandsMay', 'commandsJun', 'commandsJul', 'commandsAug', 'commandsSep', 'commandsOct', 'commandsNov', 'commandsDec'
+            'commandsJan', 'commandsFeb','commandsMar', 'commandsMar', 'commandsApr', 'commandsMay', 'commandsJun', 'commandsJul', 'commandsAug', 'commandsSep', 'commandsOct', 'commandsNov', 'commandsDec',
+            'tempsProdTotal'
         ]));
 
     }

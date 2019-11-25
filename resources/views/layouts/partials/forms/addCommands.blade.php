@@ -27,7 +27,8 @@
 
 
         
-    
+    <br>
+    <br>
         <div class="form-row ">
             <div class="form-group col-md-4">
                 <select class="custom-select"  name="product_1" id="" onchange="myFunction()">
@@ -141,10 +142,10 @@
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
             <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
+              Confirmer la validité des informations
             </label>
             <div class="invalid-feedback">
-              You must agree before submitting.
+              Vous devez d'abord Confirmer
             </div>
           </div>
         </div>
